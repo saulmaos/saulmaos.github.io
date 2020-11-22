@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re:codigo</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/font/flaticon.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <title>Re:codigo</title>
 </head>
 
 <body>
     <header>
-        <nav class="menu">
+        <nav class="menu grid-container">
             <ul>
                 <li>
-                    <a class="link" href="#app">Inicio</a>
+                    <a class="menu-options-default-color" href="#">Inicio</a>
                 </li>
                 <li>
-                    <a class="link" href="#screenshots">Sobre mi</a>
+                    <a class="menu-options-default-color" href="#aboutMe">Sobre mi</a>
                 </li>
                 <li>
-                    <a class="link" href="#screenshots">Cursos</a>
+                    <a class="menu-options-default-color" href="#courses">Cursos</a>
                 </li>
                 <li>
-                    <a class="link" href="#contact">Contáctame</a>
+                    <a class="menu-options-default-color" href="#contact">Contáctame</a>
                 </li>
             </ul>
         </nav>
@@ -32,7 +34,7 @@
     <main>
         <section class="main-container">
         </section>
-        <section class="main-text">
+        <section class="main-text fadeIn">
             <h1>
                 Re:codigo
             </h1>
@@ -40,17 +42,70 @@
                 Tu canal de desarrollo Android Profesional
             </h3>
         </section>
-        <section style="background-color: green; height: 100px; position: relative; bottom: 50px;">
-
         </section>
-        <section class="about-me-container">
-            <h2>¿Quién soy?</h2>
-            <p>Soy Saúl Maldonado, desarrollador android creador de <a href="">Coin Market</a>, una de las apps más usadas para la consulta de precios de criptomonedas</p>
+        <section id="aboutMe" class="about-me-main-container">
+            <div class="about-me-container grid-container">
+                <h2>¿Quién soy?</h2>
+                <p>Soy <span>Saúl Maldonado</span>, un apasionado desarrollador de aplicaciones para el sistema <span>Android</span> quien siempre busca estar al corriente con las tecnologías más recientes y creador de <a href="https://play.google.com/store/apps/details?id=com.mal.saul.coinmarketcap">Crypto Market</a>,
+                    una de las apps más usadas para la consulta de precios, noticias e información de criptomonedas. Además, a través de <span>youtube</span>, me gusta devolverle a la comunidad un poco de lo tanto que me ha dado.</p>
+                <figure>
+                    <img src="images/feature_graphic_Gradient.jpg" alt="">
+                </figure>
+            </div>
+        </section>
+        <section id="courses" class="courses-main-container">
+            <div class="courses-container grid-container">
+                <h2>Conmigo aprenderás las tecnologías más demandadas</h2>
+                <div class="courses-titles">
+                    <p><a href="https://www.youtube.com/watch?v=mmJKkylS8fk">Kotlin</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=UVK-yetneRQ&list=PLOAg1O9FnNv7HS_gEj848u-X9bZs6x59n">ViewModel</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=UVK-yetneRQ&list=PLOAg1O9FnNv7HS_gEj848u-X9bZs6x59n">LiveData</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=1HB94yHK9rg&list=PLOAg1O9FnNv4cztBfUbO66pJeFYJVQT3F">Room</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=KkPFKnvRVWw&list=PLOAg1O9FnNv5q8VMOCheGlFafNVWgCWWP">Firebase</a></p>
+                    <p><a href="https://www.youtube.com/channel/UCAOwsCYn5hoxJXQiDtqoNsA/videos">RxJava 2 (próximamente)</a></p>
+                    <p><a href="https://www.youtube.com/channel/UCAOwsCYn5hoxJXQiDtqoNsA/videos">Dagger 2 (próximamente)</a></p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-main-container">
+            <div class="contact-container grid-container">
+                <h2>¿Te gustaría consultarme?</h2>
+                <button><a href="mailto: hola@recodigo.com">CONTÁCTAME</a></button>
+            </div>
         </section>
     </main>
     <footer>
-        <!-- afafs asfasf asfasf -->
+        <section class="footer-container grid-container">
+            <p>Hecho por <a href="https://twitter.com/saulmaos">@saulmaos</a></p>
+            <div class="icons">
+                <a href="https://twitter.com/saulmaos"><span class="fimanager flaticon-002-twitter"></span></a>
+                <a href="https://instagram.com/saulmaos"><span class="fimanager flaticon-011-instagram"></span></a>
+                <a href="https://www.linkedin.com/in/saul-maldonado-ortiz-73ab09171/"><span class="fimanager flaticon-010-linkedin"></span></a>
+                <a href="https://www.youtube.com/channel/UCAOwsCYn5hoxJXQiDtqoNsA"><span class="fimanager flaticon-008-youtube"></span></a>
+            </div>
+        </section>
     </footer>
+    <script>
+        const navbar = document.querySelector('header');
+        const itemsNavBar = document.querySelectorAll('.menu ul li a')
+        window.onscroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('black');
+
+                itemsNavBar.forEach(element => {
+                    element.classList.add('menu-options-new-color');
+                    element.classList.remove('menu-options-default-color');
+                });
+
+            } else {
+                navbar.classList.remove('black');
+                itemsNavBar.forEach(element => {
+                    element.classList.remove('menu-options-new-color');
+                    element.classList.add('menu-options-default-color');
+                });
+            }
+        };
+    </script>
 </body>
 
 </html>
