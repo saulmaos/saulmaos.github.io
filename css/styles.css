@@ -242,16 +242,10 @@ main .contact-main-container .contact-container p {
 }
 
 main .contact-main-container .contact-container button {
-    border-style: none;
-    background-color: #ffffff00;
-}
-
-main .contact-main-container .contact-container button {
     padding: 2rem;
     font-weight: 600;
     margin-top: 2rem;
-    border: 4px solid var(--accent-color);
-    color: var(--accent-color);
+    border: .4rem solid var(--accent-color);
     background-color: #ffffff00;
     transition: all .4s;
     border-radius: 5px;
@@ -267,6 +261,7 @@ main .contact-main-container .contact-container button:hover {
 main .contact-main-container .contact-container button a {
     font-size: 2rem;
     color: var(--accent-color);
+    height: 100%;
 }
 
 main .contact-main-container .contact-container button a:hover {
